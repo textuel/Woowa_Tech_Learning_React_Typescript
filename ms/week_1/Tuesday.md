@@ -2,6 +2,21 @@
 
 2020년 09월 01일 화요일
 
+<details><summary>Table of Contents</summary>
+
+-   강의 목표 [:link:](#강의-목표)
+-   강의에서 주로 다룰 키워드 [:link:](#강의에서-주로-다룰-키워드)
+-   Typescript에서 타입을 지정하는 방법 [:link:](#typescript에서-타입을-지정하는-방법)
+-   타입 별칭 [:link:](#타입-별칭)
+-   객체 타입 [:link:](#객체-타입)
+-   Typescript&React 프로젝트 생성하기 [:link:](#typescriptreact-프로젝트-생성하기)
+-   간단한 React 컴포넌트 만들기 [:link:](#간단한-react-컴포넌트-만들기)
+-   Babel을 통한 React 컴포넌트 변환 [:link:](#babel을-통한-react-컴포넌트-변환)
+-   작성한 App 컴포넌트의 확장 [:link:](#작성한-app-컴포넌트의-확장)
+-   전역적인 상태관리 [:link:](#전역적인-상태관리)
+
+</details>
+
 ### 강의 목표
 
 1. 나는 잘 하고 있나?
