@@ -6,14 +6,14 @@
 
 ### 참여자
 
--   Kim Minsu [:octocat:](https://github.com/alstn2468)
+-   Kim MinSu [:octocat:](https://github.com/alstn2468)
 -   Kang DongHeon [:octocat:](https://github.com/daniel2231)
--   Park Sungwoo [:octocat:](https://github.com/cos18)
+-   Park SungWoo [:octocat:](https://github.com/cos18)
 
 
 ### 스터디 기록
 
-| 주차         |   Minsu    |  DongHeon  |  Sungwoo   |
+| 주차         |   MinSu    |  DongHeon  |  SungWoo   |
 | :----------- | :--------: | :--------: | :--------: |
 | 1주차 화요일 | [:link:]() | [:link:]() | [:link:]() |
 | 1주차 목요일 | [:link:]() | [:link:]() | [:link:]() |
