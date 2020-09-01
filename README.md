@@ -1,5 +1,5 @@
 <h2 align="center">
-  <img src="logo.png" alt="우아한 테크러닝 스터디 로고" width="700">
+  <img src="wolearn.png" alt="우아한 테크러닝 스터디 로고" width="700">
 </h2>
 
 ## 👨‍💻 우아한 테크러닝 React&TypeScript 3기
