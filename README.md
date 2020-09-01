@@ -4,14 +4,15 @@
   <img src="logo.png" alt="우아한 테크러닝 스터디 로고" width="700">
 </h2>
 
-### 참여자
+
+### ❤️ 참여자
 
 -   Kim MinSu [:octocat:](https://github.com/alstn2468)
 -   Kang DongHeon [:octocat:](https://github.com/daniel2231)
 -   Park SungWoo [:octocat:](https://github.com/cos18)
 
 
-### 스터디 기록
+### 📘 스터디 기록
 
 | 주차         |   MinSu    |  DongHeon  |  SungWoo   |
 | :----------- | :--------: | :--------: | :--------: |
