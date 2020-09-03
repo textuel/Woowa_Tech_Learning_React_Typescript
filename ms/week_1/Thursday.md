@@ -125,7 +125,7 @@ const bar = (x) => x * 2;
 **화살표 함수**는 인자가 하나일 경우 `()`를 생략할 수 있으며 한줄로 구성될 경우 `return` 생략이 가능하다.<br/>
 
 ```javascript
-const foo = (x) => 10;
+const foo = x => 10;
 const boar = (x, y) => x * y;
 ```
 
