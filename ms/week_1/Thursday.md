@@ -357,6 +357,8 @@ export function createStore(reducer) {
 -   `index.js`
 
 ```javascript
+import { createStore } from "./redux";
+
 const INCREMENT = "increment";
 const RESET = "reset";
 
@@ -401,10 +403,13 @@ store.dispatch(actionCreator(INCREMENT)); // { count: 2 }
 
 increment(); // { count: 3 }
 
-store.dispatch({ type: RESET, { resetCount: 10 } }); // { count: 10 }
-reset(10); // { count: 10 }
+store.dispatch({ type: RESET, resetCount: 10 }); // { count: 10 }
 increment(); // { count: 11 }
+
+store.dispatch(actionCreator(RESET, { resetCount: 5 })); // { count: 5 }
+increment(); // { count: 6 }
 reset(4); // { count: 4 }
+
 ```
 
 `actionCreator`, `increment`, `reset`함수는 액션을 조금 더 간단히 `dispatch`하도록 도와주는 헬퍼함수다.<br/>
