@@ -61,12 +61,12 @@ let bar: number = 20; // 명시적 선언을 할수 있음.
 
 ```tsx
 function foo() {
-	arguments[] ... // 암묵적인 처리... 보기 어려움
-	return 0;
+  arguments[] ... // 암묵적인 처리... 보기 어려움
+  return 0;
 }
 
 fucntion bar(..args) { // 명시적으로 가변변수를 받음
-	return 0;
+  return 0;
 }
 
 foo(1, 2);
@@ -96,23 +96,23 @@ TS에서도 런타임까지 작동되는 스펙이 존재한다. 타입스크립
 type Age = number;
 
 type Foo = {
-	age: Age;
-	name: string;
+  age: Age;
+  name: string;
 }
 
 interface Bar {
-	age: Age;
-	name: string;
+  age: Age;
+  name: string;
 }
 
 const foo: Foo = {
-	age: 10,
-	name: 'kim',
+  age: 10,
+  name: 'kim',
 }
 
 const bar: Bar = {
-	age: 10,
-	name: 'kim',
+  age: 10,
+  name: 'kim',
 }
 ```
 
@@ -132,17 +132,17 @@ yarn create react-app tech-hello --template typescript
 import React from 'react';
 
 function App() {
-	return (
-		<h1 id="header">Tech Hello?</h1>
-	);
-	// return React.createElement("h1", {id: "header"}, "Tech Hello?");
+  return (
+    <h1 id="header">Tech Hello?</h1>
+  );
+  // return React.createElement("h1", {id: "header"}, "Tech Hello?");
 }
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 ```
 
@@ -161,21 +161,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 interface AppProps {
-	title: string;
-	color: string;
+  title: string;
+  color: string;
 }
 
 function App(props: AppProps) {
-	return (
-		<h1 color={ props.color }>{ props.title }</h1>
-	);
+  return (
+    <h1 color={ props.color }>{ props.title }</h1>
+  );
 }
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App title="Tech Hello?" color="red" />
-	</React.StrictMode>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <App title="Tech Hello?" color="red" />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 ```
 
@@ -184,12 +184,9 @@ ReactDOM.render(
 현제 구현한 App 컴포넌트는 불변한 "순수 함수 컴포넌트"
 
 - CRA를 실무에서 사용하는건 어떤지?
-
-    CRA의 추가기능을 넣기에는 어렵다! 컨튜리뷰터 보면 보수적...
-
-    다양한 환경에 대응하기 어려움 Only Local Product
-
-    실사용에서는 CRA를 사용하는걸 비추
+  - CRA의 추가기능을 넣기에는 어렵다! 컨튜리뷰터 보면 보수적...
+  - 다양한 환경에 대응하기 어려움 Only Local Product
+  - 실사용에서는 CRA를 사용하는걸 비추
 
 ## 상태관리
 
