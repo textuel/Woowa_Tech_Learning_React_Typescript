@@ -401,7 +401,7 @@ store.dispatch(actionCreator(INCREMENT)); // { count: 2 }
 
 increment(); // { count: 3 }
 
-store.dispatch({ type: RESET, { resetCount: 10 } }); // { count: 1 }
+store.dispatch({ type: RESET, { resetCount: 10 } }); // { count: 10 }
 reset(10); // { count: 10 }
 increment(); // { count: 11 }
 reset(4); // { count: 4 }
