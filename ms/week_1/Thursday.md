@@ -150,9 +150,9 @@ console.log(y); // { age: 10, constructor: object }
 함수를 `new` 연산자를 이용해 인스턴스를 생성할 수 있지만 ES6이후 부터는 아래와 같이 **클래스 문법**을 제공한다.<br/>
 
 ```javascript
-class bar() {
+class bar {
     constructor() {
-        this.name = 10;
+        this.age = 10;
     }
 }
 
