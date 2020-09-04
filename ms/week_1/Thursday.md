@@ -419,16 +419,13 @@ function reset() {
 }
 ```
 
-아래와 같이 실제 `store`를 생성하고 `subscribe` 함수를 이용해 로깅또한 진행할 수 있다.<br/>
+아래와 같이 실제 `store`를 생성하고 `subscribe` 함수를 이용해 로깅 또한 진행할 수 있다.<br/>
+
+1. `createStore` 함수로 **스토어**를 생성     
+2. `getState` 함수를 사용해 값을 출력하는 함수 작성  
+3. **스토어**의 `subscribe` 메서드를 이용해 2번에서 작성한 함수로 구독 
 
 ```javascript
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * 스토어의 생성 및 subscribe를 사용한 state 로깅                    *
- * 1. createStore 함수로 스토어를 생성                               *
- * 2. getState 함수를 사용해 값을 출력하는 함수 작성                 *
- * 3. 스토어의 subscribe 메서드를 이용해 2번에서 작성한 함수로 구독  *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
 const store = createStore(reducer);
 
 function update() {
@@ -440,15 +437,11 @@ store.subscribe(update);
 
 아래와 같은 방법으로 `action`을 `dispatch`해 `store`에 저장된 상태를 변경할 수 있다.<br/>
 
+1. `type`과 `payload`을 포함한 **액션**을 `dispatch`
+2. **액션**을 반환하는 `actionCreator` 헬퍼 함수를 사용한 후 `dispatch`
+3. `payload`를 전달받아 `dispatch`까지 해주는 헬퍼 함수 이용
+
 ```javascript
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * 스토어의 값을 변경하는 액션을 실행시키는 방법                       *
- * 1. type과 payload을 포함한 액션을 dispatch                          *
- * 2. action을 반환하는 actionCreator 헬퍼 함수를 사용한 후 dispatch   *
- * 3. payload를 전달받아 dispatch까지 해주는 헬퍼 함수 이용            *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
 store.dispatch({ type: INCREMENT }); // { count: 1 }
 store.dispatch(actionCreator(INCREMENT)); // { count: 2 }
 increment(); // { count: 3 }
