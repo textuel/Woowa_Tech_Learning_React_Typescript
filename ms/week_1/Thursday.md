@@ -460,3 +460,4 @@ reset(0); // { count: 0 }
 <img src="./images/1.png" width="350" alt="실행 이미지" />
 
 위와 같이 우리가 사용하던 `redux`와 비슷하게 작동하는 것을 볼 수 있다.<br/>
+실제 작성한 코드는 [여기](https://github.com/textuel/Woowa_Tech_Learning_React_Typescript/tree/master/ms/week_1/Redux_Implement)에서 확인할 수 있다.<br/>
