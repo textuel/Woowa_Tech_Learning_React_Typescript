@@ -145,8 +145,11 @@ yarn create react-app tech-hello  --template typescript
 
 ## Redux
 
-- 상태관리를 할 수 있게 해주는 라이브러리
+- Flux개념을 바탕으로한 State 관리 라이브러리
+
 
 ## MobX
 
 - 리덕스와 다름
+- 객체지향 느낌이 강함
+- 깔끔한 느낌? 처음 사용하면 편함
