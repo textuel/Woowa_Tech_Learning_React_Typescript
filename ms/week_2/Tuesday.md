@@ -430,5 +430,5 @@ function App() {
 **Hooks**는 전역 배열로 관리되며 생성되는 순서에 따라 컴포넌트를 `key`로하여 인덱스로 관리된다.<br/>
 **Hooks**를 사용하는 컴포넌트 관련 **정보가 없을 경우** 처음 실행되는 것으로 판단되어 **초기값이 저장**된다.<br/>
 컴포넌트 관련 정보가 있을 경우 **기존의 상태**가 저장되어 있기 때문에 **저장된 값을 반환해 사용**한다.<br/>
-**최상위(at the Top Level)에서만 Hook을 호출해야 합니다.**라는 [Hooks 규칙](https://ko.reactjs.org/docs/hooks-rules.html)도 이 이유에서 작성되었다.<br/>
+_최상위(at the Top Level)에서만 Hook을 호출해야 합니다._ 라는 [Hooks 규칙](https://ko.reactjs.org/docs/hooks-rules.html)도 이 이유에서 작성되었다.<br/>
 최상위가 아닌 부분에서 호출될 경우 전역 배열에 문제가 발생해 **원하지 않는 값을 반환하는 경우가 생길 수 있다**.<br/>
