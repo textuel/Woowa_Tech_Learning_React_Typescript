@@ -280,7 +280,7 @@ function render(vdom, container) {
 }
 ```
 
-**재귀함수**를 이용해 `children`이 없을때까지 반복해 생성하게 된다.<br/>
+**재귀함수**를 이용해 `node`의 타입이 문자열이 될 때까지 반복해 생성하게 된다.<br/>
 `props`를 넘겨받는 아래와 같은 컴포넌트의 경우에도 동일하게 적용된다.<br/>
 
 ```javascript
