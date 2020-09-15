@@ -380,3 +380,4 @@ const store = applyMiddleware(createStore(reducer), [monitor, logger]);
 
 두번째 인자 배열 중 더 앞에 있는 `monitor` 미들웨어가 더 먼저 실행되는 것을 확인할 수 있다.<br/>
 작성한 `applyMiddleware` 함수는 실제 `Redux`의 API가 아니지만 비슷한 형태로 사용된다.<br/>
+작성한 미들웨어에서 `store`는 사용하지 않지만 미들웨어가 `getState()`와 같은 메서드에 접근할 수 있게 된다.<br/>

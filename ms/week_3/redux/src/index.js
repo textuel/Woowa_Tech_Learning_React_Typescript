@@ -1,11 +1,5 @@
 import { createStore, applyMiddleware } from "./redux.js";
 
-function api(url, cb) {
-    setTimeout(() => {
-        cb({ type: "응답", data: [] });
-    }, 2000);
-}
-
 function reducer(state = { counter: 0 }, action) {
     switch (action.type) {
         case "INC":
@@ -13,10 +7,6 @@ function reducer(state = { counter: 0 }, action) {
                 ...state,
                 counter: state.counter + 1,
             };
-        case "FETCH_USER":
-            api("/api/users/1", (users) => {
-                return { ...state, ...users };
-            });
         default:
             return { ...state };
     }
