@@ -1,0 +1,13 @@
+{
+    "include": [
+        "./src/*"
+    ],
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "es2015"
+        ],
+        "baseUrl": "src",
+        "jsx": "react"
+    }
+}
