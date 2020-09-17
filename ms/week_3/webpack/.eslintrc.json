@@ -1,0 +1,69 @@
+{
+    "extends": [
+      "airbnb",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "react",
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "no-underscore-dangle": 0,
+      "react/jsx-props-no-spreading": 0,
+      "@typescript-eslint/no-empty-function": 0,
+      "react/prop-types": 0,
+      "react/no-array-index-key": 0,
+      "no-void": 0,
+      "no-unused-expressions": 0,
+      "import/no-extraneous-dependencies": 0,
+      "@typescript-eslint/no-empty-interface": 0,
+      "max-classes-per-file": 0,
+      "class-methods-use-this": 0,
+      "no-console": "off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+     ]
+    },
+    "env": {
+      "browser": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src"],
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
+        }
+      }
+    },
+    "overrides": [
+      {
+        "files": ["*.js"],
+        "rules": {
+          "@typescript-eslint/no-var-requires": "off",
+          "import/no-unresolved": "off",
+          "@typescript-eslint/camelcase": "off",
+          "@typescript-eslint/explicit-function-return-type": "off",
+          "@func-names": "off"
+        }
+      }
+    ]
+  }

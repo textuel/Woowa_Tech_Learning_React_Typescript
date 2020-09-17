@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 interface AppProps {}
 
 const App: React.FC<AppProps> = () => {
-    return <h1> Hello? </h1>;
+    return <h1>Hello?</h1>;
 };
 
 export default App;
