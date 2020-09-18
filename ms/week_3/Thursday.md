@@ -118,11 +118,11 @@ const config = {
 import { createStore, applyMiddleware } from "redux";
 ```
 
-위와 같이 앞에서 구현해 보았던 함수들과 같은 기능을 하는 가져와 사용할 수 있다.<br/>
+위와 같이 앞에서 구현해 보았던 함수들과 같은 기능을 함수를 가져와 사용할 수 있다.<br/>
 `redux`를 `React`에서 사용하기 위해서 `react-redux` 라이브러리를 사용해야 한다.<br/>
 
 ```tsx
-import { Provier } from "react-redux";
+import { Provider } from "react-redux";
 
 render(
     <Provider store={store}>
