@@ -6,8 +6,8 @@
 
 - MobX [:link:](#mobx)
 - observable 클래스와 데코레이터 [:link:](#observable-클래스와-데코레이터)
-- 클래스 메서드와 this [:this:](#클래스-메서드와-this)
-- observable에 반응하는 함수 [:this:](#observable에-반응하는-함수)
+- 클래스 메서드와 this [:link:](#클래스-메서드와-this)
+- observable에 반응하는 함수 [:link:](#observable에-반응하는-함수)
 
 </details>
 
