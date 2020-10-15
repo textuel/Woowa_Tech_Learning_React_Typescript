@@ -8,6 +8,7 @@
 - observable 클래스와 데코레이터 [:link:](#observable-클래스와-데코레이터)
 - 클래스 메서드와 this [:link:](#클래스-메서드와-this)
 - observable에 반응하는 함수 [:link:](#observable에-반응하는-함수)
+- mobx-react [:link:](#mobx-react)
 
 </details>
 
@@ -347,6 +348,72 @@ const myReaction = reaction(
 `reaction`은 `useEffect`와 비슷하게 생겼으며 두 개의 함수를 인자로 받는다.<br/>
 첫 번째 함수의 반환값은 두번째 함수의 인자로 전달되며 **반환값이 이전과 다를 경우**에만 실행된다.<br/>
 
-### 싱글톤 패턴
+### mobx-react
 
-`MobX`에서는 하나의 스토어 인스턴스만 생성하는 **싱글톤 패턴**을 사용한다.<br/>
+기존의 `App.tsx`에서는 `autorun` 함수를 이용해 컴포넌트를 다시 렌더링 시키고 있다.<br/>
+
+```tsx
+autorun(() => {
+  render(<App data={cart.data} counter={cart.counter} />, rootElement);
+});
+```
+
+위의 기능을 하며 `MobX`와 함꼐 사용할 수 있는 라이브러리는 `mobx-react`가 있다.
+`mobx-react`의 6버전 이전은 Hook을 지원하지 않으며 6버전 이후부터 지원한다.<br/>
+추가적으로 Hook을 지원하는 `mobx-react` 라이브러리로는 `mobx-react-lite`가 있다.<br/>
+
+- `App.tsx`
+
+```tsx
+import React from 'react';
+import { inject, observer } from 'mobx-rect';
+
+interface AppProps {
+  data: number;
+  counter: number;
+}
+
+@observer
+function App(props: AppProps) {
+  return (
+    <div classNamep='App'>
+      <h1>
+        외부 데이터: {props.data} vs {props.counter}
+      </h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+함수 컴포넌트에 `@observer` 데코레이터를 사용하면 오류가 발생하며 클래스 컴포넌트로 변경해야한다.<br/>
+
+- `App.tsx`
+
+```tsx
+import React from 'react';
+import { inject, observer } from 'mobx-rect';
+
+interface AppProps {
+  data?: number;
+  counter?: number;
+}
+
+@injct('cart')
+@observer
+export default class App extends React.Component<AppProps> {
+  render() {
+    return (
+      <div classNamep='App'>
+        <h1>
+          외부 데이터: {this.props.cart.data} vs {this.props.cart.counter}
+        </h1>
+      </div>
+    );
+  }
+}
+```
+
+스토어 인스턴스를 주입하기 위해서는 `inject` 데코레이터를 이용하면 된다.<br/>
+또한 HoC형태가 되기 때문에 Typescript와 사용하게 되면 props의 타입을 optional로 주어야 한다.<br/>
