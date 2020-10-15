@@ -393,7 +393,7 @@ export default App;
 
 ```tsx
 import React from 'react';
-import { inject, observer } from 'mobx-rect';
+import { inject, observer } from 'mobx-react';
 
 interface AppProps {
   data?: number;
