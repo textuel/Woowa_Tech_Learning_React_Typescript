@@ -416,4 +416,4 @@ export default class App extends React.Component<AppProps> {
 ```
 
 스토어 인스턴스를 주입하기 위해서는 `inject` 데코레이터를 이용하면 된다.<br/>
-또한 HoC형태가 되기 때문에 Typescript와 사용하게 되면 props의 타입을 optional로 주어야 한다.<br/>
+HoC형태가 되기 때문에 Typescript와 사용하게 되면 props의 타입을 optional로 주어야 한다.<br/>
