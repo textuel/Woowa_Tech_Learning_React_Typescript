@@ -417,3 +417,61 @@ export default class App extends React.Component<AppProps> {
 
 스토어 인스턴스를 주입하기 위해서는 `inject` 데코레이터를 이용하면 된다.<br/>
 또한 HoC형태가 되기 때문에 Typescript와 사용하게 되면 props의 타입을 optional로 주어야 한다.<br/>
+
+### 비동기 액션
+
+`MobX`에서의 비동기로 실행될 액션은 아래와 같이 기존의 `Promise` 형태로 실행하는 방법이 존재한다.<br/>
+
+```javascript
+import { action, observable } from 'mobx';
+
+class Store {
+  @observable githubProjects = [];
+  @observable state = 'pending'; // "pending", "done" or "error"
+
+  fetchProjects() {
+    this.githubProjects = [];
+    this.state = 'pending';
+    fetchGithubProjectsSomehow().then(
+      action('fetchSuccess', (projects) => {
+        const filteredProjects = somePreprocessing(projects);
+        this.githubProjects = filteredProjects;
+        this.state = 'done';
+      }),
+      action('fetchError', (error) => {
+        this.state = 'error';
+      })
+    );
+  }
+}
+```
+
+당연하게도 `async - await`을 이용해서 처리할 수 도 있다.<br/>
+
+```javascript
+import { runInAction, observable } from "mobx"
+
+class Store {
+    @observable githubProjects = []
+    @observable state = "pending" // "pending", "done" or "error"
+
+    async fetchProjects() {
+        this.githubProjects = []
+        this.state = "pending"
+        try {
+            const projects = await fetchGithubProjectsSomehow()
+            const filteredProjects = somePreprocessing(projects)
+            runInAction(() => {
+                this.githubProjects = filteredProjects
+                this.state = "done"
+            })
+        } catch (e) {
+            runInAction(() => {
+                this.state = "error"
+            }
+        }
+    )
+}
+```
+
+이 경우 `action` 함수를 사용하지 않고 `runInAction` 함수를 이용해 `action`을 감쌀 수 있다.<br/>
