@@ -475,3 +475,29 @@ class Store {
 ```
 
 이 경우 `action` 함수를 사용하지 않고 `runInAction` 함수를 이용해 `action`을 감쌀 수 있다.<br/>
+조금 더 간단하게 사용하기 위해서는 `flow` 함수를 이용할 수 있다.<br/>
+
+```javascript
+import { flow } from 'mobx';
+
+class Store {
+  githubProjects = [];
+  state = 'pending';
+
+  fetchProjects = flow(function* (this: Store) {
+    this.githubProjects = [];
+    this.state = 'pending';
+    try {
+      const projects = yield fetchGithubProjectsSomehow();
+      const filteredProjects = somePreprocessing(projects);
+      this.state = 'done';
+      this.githubProjects = filteredProjects;
+    } catch (error) {
+      this.state = 'error';
+    }
+  });
+}
+```
+
+`flow` 자체가 `action` 역할을 해주기 때문에 따로 `@action` 데코레이터를 사용할 필요는 없다.<br/>
+`flow`는 매개변수로 **제너레이터**를 받으며 `redux-saga`와 비슷하게 로직을 작성할 수 있다.<br/>
